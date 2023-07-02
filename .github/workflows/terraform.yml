@@ -100,8 +100,8 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -input=false -out tfplan
 
-      - name: Convert to tfplan.JSON
-        run: terraform show -json tfplan > tfplan.json 2>&1
+      # - name: Convert to tfplan.JSON
+      #   run: terraform show -json tfplan > tfplan.json 2>&1
 
       # - name: Display the new change
       #   run: cat tfplan.json | jq -r '.resource_changes[] | select(.change.actions[0] != "no-op") | [.change.actions[], .type,  .change.after.name] | @tsv'
