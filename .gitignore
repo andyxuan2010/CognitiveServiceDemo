@@ -30,3 +30,6 @@ override.tf.json
 
 
 credentials
+
+# don't include terraform lock file
+.terraform.lock.hcl
