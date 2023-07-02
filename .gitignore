@@ -33,3 +33,6 @@ credentials
 
 # don't include terraform lock file
 .terraform.lock.hcl
+
+# don't include any terraform local providers
+.terraform/providers/*
