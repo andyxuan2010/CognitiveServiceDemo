@@ -81,10 +81,10 @@ variable "network_interface_name" {
 
 
 
-# for WestEurope location we have "B1, B2, S0, S1, S2, S4, D1"
-# for demo purpose we pick D1 plan
+# We have [F0 F1 S0 S S1 S2 S3 S4 S5 S6 P0 P1 P2 E0 DC0]
+# for demo purpose we pick F1 plan, we need to apply for the service to be enabled.
 variable "sku" {
   type        = string
-  description = "The sku name of the Azure Analysis Services server to create. Choose from: B1, B2, D1, S0, S1, S2, S3, S4, S8, S9. Some skus are region specific. See https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-overview#availability-by-region"
-  default     = "D1"
+  description = "The sku name of the Azure Cognitive Services server to create. Choose from: [F0 F1 S0 S S1 S2 S3 S4 S5 S6 P0 P1 P2 E0 DC0]"
+  default     = "F1"
 }
