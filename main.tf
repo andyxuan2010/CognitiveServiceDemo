@@ -1,6 +1,6 @@
 
 resource "azurerm_resource_group" "challenge-rg" {
-  name     = "challenge-resources"
+  name     = "challenge-rg"
   location = "West Europe"
   tags = merge(var.common_tags, {
     name = "challenge-rg"
