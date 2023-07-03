@@ -11,6 +11,10 @@ output "cognitive-service-endpoint" {
   value = azurerm_cognitive_account.cognitive-service.endpoint
 }
 
-# output "private_endpoint_url" {
-#   value = azurerm_private_endpoint.edp-cognitive.private_service_connection[0].private_endpoint_connections[0].private_endpoint.ip_address
-# }
+output "private_endpoint_url" {
+  value = azurerm_private_endpoint.edp-cognitive.custom_dns_configs[0].fqdn
+}
+
+output "private_endpoint_private_ips" {
+  value = azurerm_private_endpoint.edp-cognitive.custom_dns_configs[0].ip_addresses
+}
