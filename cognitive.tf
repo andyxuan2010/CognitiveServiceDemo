@@ -18,6 +18,9 @@ resource "azurerm_cognitive_account" "cognitive-service" {
   identity {
     type = "SystemAssigned"
   }
+  tags = merge(var.common_tags, {
+    name = "cognitive-service"
+  })
 }
 
 # ### Azure Open AI Model - Chat GPT
@@ -53,11 +56,17 @@ resource "azurerm_private_endpoint" "edp-cognitive" {
     name                 = "default"
     private_dns_zone_ids = [azurerm_private_dns_zone.local.id]
   }
+  tags = merge(var.common_tags, {
+    name = "cognitive-private-connection"
+  })
 }
 
 resource "azurerm_private_dns_zone" "local" {
   name                = "privatelink.local"
   resource_group_name = azurerm_resource_group.challenge-rg.name
+  tags = merge(var.common_tags, {
+    name = "privatelink.local"
+  })
 }
 
 resource "azurerm_private_dns_zone_virtual_network_link" "vl-basf-challenge" {

@@ -2,12 +2,18 @@
 resource "azurerm_resource_group" "challenge-rg" {
   name     = "challenge-resources"
   location = "West Europe"
+  tags = merge(var.common_tags, {
+    name = "challenge-rg"
+  })
 }
 resource "azurerm_virtual_network" "challenge-vnet" {
   name                = "challenge-vnet"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.challenge-rg.location
   resource_group_name = azurerm_resource_group.challenge-rg.name
+  tags = merge(var.common_tags, {
+    name = "challenge-vnet"
+  })
 }
 resource "azurerm_subnet" "challenge-subnet" {
   name                 = "challenge-subnet"

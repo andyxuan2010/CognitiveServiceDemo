@@ -10,6 +10,7 @@ variable "common_tags" {
     creation_date        = "2023-07-02"
     project              = "azure-basf-demo"
     region               = "westeurope"
+    purpose              = "demo"
   }
 }
 
@@ -28,11 +29,6 @@ variable "environment" {
     condition     = var.environment == null ? true : contains(["prod", "nprod", "dev", "test", "sbx", "lab"], var.environment)
     error_message = "Only a valid azure names are expected here such as prod."
   }
-}
-
-variable "purpose" {
-  default     = "demo"
-  description = "variable used for azure module purpose"
 }
 
 variable "smartgpt-ec2-key" {
