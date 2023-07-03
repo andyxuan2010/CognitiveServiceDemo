@@ -29,6 +29,6 @@ resource "azurerm_private_endpoint" "edp-cognitive" {
     name                           = "cognitive-private-connection"
     is_manual_connection           = false
     private_connection_resource_id = azurerm_cognitive_account.cognitive-service.id
-    subresource_names              = ["ml"]
+    subresource_names              = ["cog"]
   }
 }
