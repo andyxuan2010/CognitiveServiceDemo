@@ -35,7 +35,6 @@ variable "purpose" {
   description = "variable used for azure module purpose"
 }
 
-
 variable "smartgpt-ec2-key" {
   default = <<EOT
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdrVPCmgIxr/0/GdxsrTVTQfZd8q5uZD4Ws7WgHUZEJjIal1xvK2S+996u5agUzbd5Kl2aq+BnVVhdWwblWTvejTF9NzuI5gVx3GGrWHg/kmtQ/t+rj6FWYwwo9Esg5fSYAeO2sY8CLbsoQQcwxyXAo+9HyVnxC0Nk0RcoClEpy/T/DoA4wZtnnSZ/cCAXfifT1AOv9DPR+kAtgGfXu6uTYZzg6NvvE4LFHhDJnvPVhFPXri8jfEIzDo+Hjejq+AZH1LvoBB4c1teXLg1u6sUHK1Gow6WX1PlSshmpMqSE8UCt81iPwkHtFBNo951OybYcWnBcO1aOU1yyO1DBRBR3 cdap-service
@@ -52,39 +51,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjoftGI4Wgwc6YHGgbbUfAkMm2k4JQIkMXmlHrs24b
 EOT
 }
 
-############
-## unit 11 for vm win bastion
-
-variable "virtual_network_name" {
-  type        = string
-  description = "VNET name in Azure"
-  default     = "vnet-bastion"
-}
-
-variable "subnet_name" {
-  type        = string
-  description = "Subnet name in Azure"
-  default     = "subnet-bastion"
-}
-
-variable "public_ip_name" {
-  type        = string
-  description = "Public IP name in Azure"
-  default     = "pip-vm"
-}
-
-variable "network_interface_name" {
-  type        = string
-  description = "NIC name in Azure"
-  default     = "nic-vm-1"
-}
-
-
 
 # We have [F0 F1 S0 S S1 S2 S3 S4 S5 S6 P0 P1 P2 E0 DC0]
-# for demo purpose we pick F1 plan, we need to apply for the service to be enabled.
+# for demo purpose we pick S0 plan, we need to apply for the service to be enabled.
 variable "sku" {
   type        = string
   description = "The sku name of the Azure Cognitive Services server to create. Choose from: [F0 F1 S0 S S1 S2 S3 S4 S5 S6 P0 P1 P2 E0 DC0]"
-  default     = "F1"
+  default     = "S0"
 }
