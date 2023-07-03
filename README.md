@@ -1,4 +1,4 @@
-# CognitiveSearchDemo
+# CognitiveServiceDemo
 ## requirement
 Our goal is to set up an Azure Cognitive Services account and deploy a language model into it. The
 environment needs to be created in a reproducible manner, in our case scripted in Terraform.

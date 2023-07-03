@@ -2,7 +2,7 @@ variable "common_tags" {
   type = map(any)
   default = {
     managed_by_terraform = "true"
-    terraform_project    = "https://github.com/sandbox4test/CognitiveSearchDemo"
+    terraform_project    = "https://github.com/sandbox4test/CognitiveServiceDemo"
     owner_group          = "TBD"
     cost_center          = "TBD"
     technical_contact    = "andyxuan2010@gmail.com"
