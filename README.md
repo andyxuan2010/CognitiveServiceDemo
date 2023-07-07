@@ -12,6 +12,8 @@ Cognitive search service created and “gpt-35-turbo” model gets deployed.
 private endpoint connection to the cognitive service
 ![Alt text](image2.png)
 
+![Alt text](image3.png)
+
 Some higlights
 1.	Github action to support CI/CD IaC pipeline. Code will be automatically deployed to azure
 2.	Pre-commit check to improve coding efficiency.
